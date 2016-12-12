@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 
 const log = (type, title, msg) => {
-let channel = bot.channels.get("204752675680681984")
+let channel = bot.channels.get("244612550539476994")
 channel.sendMessage("", {embed: {
   color: 3447003,
   author: {
