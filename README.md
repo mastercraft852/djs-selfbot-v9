@@ -2,7 +2,7 @@
 
 This is the selfbot I use in my every day dealings with Discord. 
 
-It's built in Discord.js version 9.2.0 (at the moment)
+It's built in Discord.js version 10.0.1 (at the moment)
 
 ## Downloading
 
@@ -21,6 +21,6 @@ Once finished:
 > To get your token, do CTRL+SHIFT+I in Discord, type in `localStorage.token` and copy it.
 
 Then start the bot using 
-`node self.js`
+`node app.js`
 
 For support join the [Discord.js Official server](https://discord.gg/bRCvFy9) and speak to `root`.
