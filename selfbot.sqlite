@@ -1,0 +1,358 @@
+SQLite format 3   @        &      !                                                     -Ê
+Ä À ØjÀÜÄ                                                                                                                                                                                                                                                                                                                                            Å;ÇÅ2ÇGtabletagstagsCREATE TABLE "tags" ('name'  UNIQUE NOT NULL, 'contents'  NOT NULL, 'added' DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, 'used' INTEGER DEFAULT '0' NOT NULL)ù A'; indexsqlite_autoindex_tags_1tagsÅ8Ç?tableshortcutsshortcutsCREATE TABLE 'shortcuts' ('name'  UNIQUE NOT NULL, 'contents'  NOT NULL, 'added' DATETIME DEFAULT CURRENT_TIMESTAMP, 'used' INTEGER DEFAULT '0' NOT NULL)1E indexsqlite_autoindex_shortcuts_1shortcuts   c]ÅtabletagstagsCREATE TABLE tags (id INTEGER PRIMARY KEY ASC, name TEXT, contents TEXT)    t.startsWith(prefix+"play")) {
+  let file = "./music/mysong.mp3";   // File on disk. Works for direct URLs but not youtube!
+  let channel = msg.author.voiceChannel;  // Join user's voice channel. Or, specify another?
+  
+  bot.joinVoiceChannel(channel).then(connection => {
+    connection.playFile(file)
+    .then(intent => {
+      intent.on("end", () => {
+        console.log("Playback Ended");
+        bot.leaveVoiceChannel(channel);
+      })
+      intent.on("error", (err) => {
+        console.log('Playback Error: ' + err);
+        bot.leaveVoiceChannel(channel);
+      });
+    })
+  })
+  .catch(err => {
+    console.log('Error joining voice channel: ' + err);
+  });
+}
+```
+playFile doc: http://discordjs.readthedocs.io/en/latest/docs_voiceconnection.html#playfile-path-options-callback
+Need Youtube? Check out `ytdl-core` which can provide a `raw stream` for `playRawStream` !2016-08-29 01:03:07                                                                                                                                                             
+      $         "                        #   %   &   	             !                                                                                                                                                                    Ç Ñ/gslongHow-To Bot: The following guide goes through everything you need to know on how to create a bot, code it, and run it. Before you ask any further question, please read this: 
+<https://eslachance.gitbooks.io/discord-js-bot-guide/content/getting-started/the-long-version.html>e Å=headdeskhttp://img2.wikia.nocookie.net/__cb20140818100403/madnesscombat/images/7/73/Headdesk.gifÅn ÉMalienwareI will certainly get flack for saying it: It's an Alienware. Yes I have perfectly good and valid reason for getting a Dell PC, not it's not personal preference, no it does not cost more than a custom built PC I did the math.d Å=botauthTo add a bot to your server please see: <http://imgur.com/a/W8Mud> and *read carefully*.   Z ÅZ                                                                                                                                                                                                                                                                                                                                              Ñ$8à3v8v9OH! Looks like you updated to the latest version of Discord.js **without checking** what was new. Well guess what, **everything is new**. V9 changes everything. 
+- It requires Node v6.x
+- It's been rewritten from the ground up
+- Pretty much all your code will need to be updated.
+
+If you want to just forget all this bad dream and get back to work: 
+
+- run the command `npm install hydrabolt/discord.js#indev-old`
+- Restart your bot.
+- Now you can take the time to update your bot slowly to v9 eventually. And breathe.2016-09-11 00:20:27}7ÅI3anykeyhttp://66.media.tumblr.com/978422d5d5c1276930bf0512d4008350/tumblr_o2ckatdwWB1ql6j3mo1_500.gif2016-09-11 00:02:18    $ p/ $                      ä   ìqteddybearSo there's this concept called **The Teddy Bear Technique**. The story goes like this. A new manager in charge of a group of developers found that very often, one of his programmers would come see him because he code didn't compile. The first que   	? ugitbookhttps://eslachance.gitbooks.io/discord-js-bot-guide/Ö äbracketsThe following trick is a lifesaver, so pay attention: Your code editor is trying to help you. Whatever editor you're using, clicking on any (and I mean any) separator token such as parentheses, square brackets, curly braces, double and single quotes, will automatically highlight the one that matches it. The screenshot below shows this: I clicked on the curly brace at the bottom, it shows me the one on top by surrounding it with a square. Learn this, and how different functions and event handlers "look" like. Even in long bits of code, this works.
+https://cdn.discordapp.com/attachments/81385020756865024/194265307815215106/unknown.png    udo apt-get install python2.7 ffmpeg build-essential`
+
+Update Node to at least version 4: https://nodejs.org/en/download/package-manager/
+Also update NPM afterwars: `npm install -g npm`
+
+Once complete, reinstall discord.js from your project folder: 
+`npm cache clean`
+`npm install --save discord.js`
+
+**Confirm that it went well** by trying the following commands: 
+`ffmpeg` should output `ffmpeg version (something) [...]`. If not, reinstall ffmpeg.
+`python --version` should output `2.7.X` (2.7.11 probably). If not, reinstall python 2.7
+`node -v` should be either 4.x.x or 6.x.x. If not, `apt-get remove node` then follow the instructions above again.
+`npm list discord.js` should return `discord.js@8.0.0`. If `npm update --save discord.js` does not update to the latest version, fix or remove package.json file and do it again.
+`npm list node-opus` should return the discord version as well as the `node-opus@0.2.1` version (currently).
+
+If any of these commands fail, google the error message for your specific OS.   ¬ ªã*¬                                                                                               á évoiceex```js
+if(msg.contents.startsWith(prefix+"play")) {
+  let file = "./music/mysong.mp3";   // File on disk. Works for direct URLs but not youtube!
+  let channel = msg.author.voiceChannel;  // Join user's voice channel. Or, specify another?
+  
+  bot.joinVoiceChannel(channel).then(connection => {
+    connection.playFile(file)
+ f$ !Å;speechlesshttps://cdn.discordapp.com/attachments/81385020756865024/197095330783690755/unknown.png_# Å=fphttps://cdn.discordapp.com/attachments/189542410622205952/197087798073884674/iWKad22.png." Qconfused‚òùüòÄ ..... üëàüòï ...... ü§îÇB! ÑwpermbitsTo create the "permission bits" at the end of a Bot Authorization URL, visit <https://discordapi.com/permissions.html> and check the permissions you want. Use that at the end of the URL:
+`https://discordapp.com/oauth2/authorize?client_id=**application_id_here**&scope=bot&permissions=**permission_bits_here**`    all-ffmpeg-on-windows/>
+- If you have Visual Studio 2013 or 2015, make sure **C++ Build Tools** are installed. Simply create a new Empty C++ project. If prompted to install the C++ files, do so. 
+- **Alternatively**, you can install only the Visual C++ Build Tools as a standalone: <http://landinghub.visualstudio.com/visual-cpp-build-tools>
+- Some users have reported that installing VLC helps with codec dependencies, so try that. 
+
+Run the following commands to re-install discord.js
+
+`npm cache clean` (to remove any cached versions of discord or its dependencies)
+`npm install -g npm` (this will update NPM, and fixed it for some users!)
+`npm install --save --msvs_version=2015 discord.js` (change version to 2013 if using VS2013)
+
+If any errors show, attempt to re-install node-opus manually: 
+
+`npm cache clean`
+`npm install node-opus`
+
+**IF THIS DOESN'T WORK, USE LINUX. Don't care if it's a VM, a VPS, an old laptop, a toaster or a damn shoebox. If the above won't work you're out of luck!**2016-08-16 00:22:02    ˆ ∂}2 ˆ ˆ          ÅW&Çy3selfbotSo, you wanna make a selfbot? I gotchu covered, fam. Read up!
+<https://eslachance.gitbooks.io/discord-js-bot-guide/content/samples/selfbots,_the_awesomest_thing_in_the_universe.html>2016-08-18 03:31:05	Ç9*ÑE3find**To use the new s/find/replace feature**
+In this sentence:
+Roses are red, violets are blue, this feature is cool and so are you.
+after you sent it and a new message with `s/cool/awesome` to replace `cool` with `awesome`
+Works only for your last message (just like the Up arrow does).2016-08-25 14:46:38I)_3watashiÁßÅ„ÅØEvie„ÅÆ„Åß„Åô„ÄÇ „ÅØ„Åò„ÇÅ„Åæ„Åó„Å¶2016-08-24 18:20:217(93slowclapüëè ... üëè ... üëè2016-08-19 04:21:51ÇG'!ÑU3proficientI once was proficient. But then someone decided that if you're rude and curse a lot, it means you're not proficient with a library. Same if you don't help the enternal noobish help vampires. Same if you call someone literally named "Notorious Retard", "retard". That's why I'm not Proficient.2016-08-18 17:46:08    ples.com/how-to-install-ffmpeg-on-windows/>
+- If you have Visual Studio 2013 or 2015, make sure **C++ Build Tools** are installed. Simply create a new Empty C++ project. If prompted to install the C++ files, do so. 
+- **Alternatively**, you can install only the Visual C++ Build Tools as a standalone: <http://landinghub.visualstudio.com/visual-cpp-build-tools>
+- Some users have reported that installing VLC helps with codec dependencies, so try that. 
+
+Run the following commands to re-install discord.js
+
+`npm cache clean` (to remove any cached versions of discord or its dependencies)
+`npm install -g npm` (this will update NPM, and fixed it for some users!)
+`npm install --save --msvs_version=2015 discord.js` (change version to 2013 if using VS2013)
+
+If any errors show, attempt to re-install node-opus manually: 
+
+`npm cache clean`
+`npm install node-opus`
+
+**IF THIS DOESN'T WORK, USE LINUX. Don't care if it's a VM, a VPS, an old laptop, a toaster or a damn shoebox. If the above won't work you're out of luck!**    C ≥ C )                           ' #justright‚úãüò©üëåÑm& âSnoobsWe're glad to help where we can, but come with at least a basic understanding of the programming language you intend to use. It's not exactly fun trying to help someone who does not understand the basics. Please, to maintain everyone's sanity, we ask that you at least have gone through a known JavaScript course such as <https://www.codecademy.com/learn/javascript> and perhaps on node.js like <http://www.nodebeginner.org/>. If you don't understand the code samples we show you and you read on the internet, then you will most likely not be able to code your own bot. We're not going to do it for you, period.ÇJ% ÖdeletemsgRead, assimilate, understand: 
+```js
+bot.on("message", msg => {
+    bot.sendMessage(msg.channel, "THIS IS THE 1. MESSAGE THAT GETS DELETED, IT'S THE BOTS MESSAGE", (err, message) => {
+        bot.deleteMessage(message);
+    }) ;
+
+    //delete the message that triggered the command
+    bot.deleteMessage(msg);
+})
+``` Í  | HÈr | | | n                                                                                      . blahtestà- êvoicebotSo you want to make a music bot and you're on Windows? Tip #1: Don't.
+Making voice work on      à êvoicewinIn order for voice and music to function properly in discord.js Windows, ensure the follow   
+   #justright‚úãüò©üëåu+ Å_violets```
+Rose are Red
+Violet are Blue
+Wait a second...
+Violets are VIOLET
+This poem makes no goddamn sense
+```]* Å+codeblockPlease use codeblocks to show your code!
+\`\`\`js
+var yourcode = "here";
+\`\`\`Å:) #Çagrunt-babelThis is why `grunt-babel` is pure evil and `sindresorhus` is the devil incarnate: 
+https://cdn.discordapp.com/attachments/81385020756865024/198835115164434433/unknown.pngÅx( Écmusicbot```md
+# Making your own Music Bot
+
+So, you want to know how to make a music bot? Don't. There's about 20 out there, they all work fine, and you'll spend weeks trying to figure out why node-opus won't compile. Please, just... don't.
+```     windows is the most frustrating, difficult thing you could possibly do with discord.js. I've seen people struggling for *days* trying to get their very basic code to work on Windows. **DAYS**. After a couple had the same problem, I decided to do something: I added a youtube play function to my bot. I did that to prove a point, to show just how easy it was under linux. I was just about ready to put the first version of my bot in production and so I took on the challenge at the same time. Here's what I achieved in **One Hour**:
+1. Got on OVH.com and ordered a VPS.
+2. Wait until it was ready to use
+3. Did updates and upgrades with apt-get
+4. installed all pre-requisites (python, ffmpeg, build-essential)
+5. Got my bot from git
+6. Tan NPM install to get all my pre-requisites
+7. Ran the bot to ensure it worked as-is (it did)
+8. Added `ytdl-core`, coded the play function, tested it, fixed one mistake, ran again. And it worked.                                                                                         — i—                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Å/ Çprivacy**To prevent any more spam, right-click on the server in the list, select Privacy Settings, and uncheck the only option in this window.**É. Ü!spoonThere is no spoon, and there is no spoon-feeding. Challenges are what makes life interesting, and we'd rather give you tips and resources than code for you. So, if you think you're entitled to getting code that fixes all your issues without having to think about it, you had better also realized we're entitled to refuse to spoon-feed you. Show at least some initiative and at least ask nicely.    p  p                                                                                                      á1 évoiceex```js
+if(msg.content.startsWith(prefix+"play")) {
+  let file = "./music/mysong.mp3";   // File on disk. Works for direct URLs but not youtube!
+  let channel = msg.author.voiceChannel;  // Join user's voice channel. Or, specify another?
+  
+  bot.joinVoiceChannel(channel).then(connection => {
+    connection.playFile(file)
+    .then(intent => {
+      intent.on("end", () => {
+        console.log("Playback Ended");
+        bot.leaveVoiceChannel(channel);
+      })
+      intent.on("error", (err) => {
+        console.log('Playback Error: ' + err);
+        bot.leaveVoiceChannel(channel);
+      });
+    })
+  })
+  .catch(err => {
+    console.log('Error joining voice channel: ' + err);
+  });
+}
+```
+playFile doc: http://discordjs.readthedocs.io/en/latest/docs_voiceconnection.html#playfile-path-options-callback
+Need Youtube? Check out `ytld-core` which can provide a `raw stream` for `playRawStream` !    all-ffmpeg-on-windows/>
+- If you have Visual Studio 2013 or 2015, make sure **C++ Build Tools** are installed. Simply create a new Empty C++ project. If prompted to install the C++ files, do so. 
+- **Alternatively**, you can install only the Visual C++ Build Tools as a standalone: <http://landinghub.visualstudio.com/visual-cpp-build-tools>
+- Some users have reported that installing VLC helps with codec dependencies, so try that. 
+
+Run the following commands to re-install discord.js
+
+`npm cache clean` (to remove any cached versions of discord or its dependencies)
+`npm install -g npm` (this will update NPM, and fixed it for some users!)
+`npm install --save --msvs_version=2015 discord.js` (change version to 2013 if using VS2013)
+
+If any errors show, attempt to re-install node-opus manually: 
+
+`npm cache clean`
+`npm install node-opus`
+
+**IF THIS DOESN'T WORK, USE LINUX. Don't care if it's a VM, a VPS, an old laptop, a toaster or a damn shoebox. If the above won't work you're out of luck!**2016-08-16 00:22:02	    n windows is the most frustrating, difficult thing you could possibly do with discord.js. I've seen people struggling for *days* trying to get their very basic code to work on Windows. **DAYS**. After a couple had the same problem, I decided to do something: I added a youtube play function to my bot. I did that to prove a point, to show just how easy it was under linux. I was just about ready to put the first version of my bot in production and so I took on the challenge at the same time. Here's what I achieved in **One Hour**:
+1. Got on OVH.com and ordered a VPS.
+2. Wait until it was ready to use
+3. Did updates and upgrades with apt-get
+4. installed all pre-requisites (python, ffmpeg, build-essential)
+5. Got my bot from git
+6. Tan NPM install to get all my pre-requisites
+7. Ran the bot to ensure it worked as-is (it did)
+8. Added `ytdl-core`, coded the play function, tested it, fixed one mistake, ran again. And it worked.2016-08-16 00:22:02                                                                      1  1                                       áL9!é_3	voicelinux**VOICE NOT WORKING**
+
+If you are having issues with voice not working on linux, here are a few steps you have to follow.
+
+1‚É£ ensure you have the necessary by running `sudo apt-get update && apt-get upgrade && apt-get install ffmpeg build-essential`
+    (Note: Ubuntu 14 or Jessi Rasbpian: install `libav-tools` instead of `ffmpeg`)
+2‚É£ ensure that you are on node 6 by downloading from <https://nodejs.org/en/download/package-manager/>
+3‚É£ Update npm by running `npm i -g npm`
+4‚É£ run `npm cache clean` then `npm install --save --no-optional discord.js`
+
+If you get any errors ensure the following: 
+
+1‚É£ typing `ffmpeg` should output `ffmpeg version (something) [...]`. If not, reinstall ffmpeg.
+2‚É£ `node -v` should say `6.5.0` or higher. If not, reinstall it.
+3‚É£ `npm list discord.js` should return `discord.js@9.1.0` or higher. If not, reinstall it.
+
+If any of these commands fail, google the error message for your distro.2016-09-11 00:30:33 %%E/ÔVÜr÷– Ô Ô                                                                                                                                                                                   Ha3Ha32flip‚îª‚îÅ‚î433crylenny( Õ°¬∞; Õú ñ; Õ°¬∞)2016-09-13 12:42:14//3lenny( Õ°¬∞ Õú ñ Õ°¬∞)2016-08-16 00:11:53'#3cry(‚ï•Ôπè‚ï•)2016-08-24 18:28:54U3	oppaOÃ≤ppaÃ≤ („Å£-Ã∂‚óèÃÉÁõä‚óèÃÉÃ∂)„Å£ ,Ô∏µ‚Äø SÃ≤tÃ≤ylÃ≤eÃ≤2016-08-24 18:56:40*
+'3garry·ïï( ·êõ )·ïó2016-08-24 18:44:42° +3fight(‡∏á'Ã-#3justright‚úãüò©üëå2016-08-16 00:12:33v+'3shrug¬Ø\_(„ÉÑ)_/¬Ø2016-08-16 00:12:12
+-	+3fight(‡∏á'ÃÄ-'ÃÅ)‡∏á2016-08-24 18:43:52v Na3doubleflip‚îª‚îÅ‚îª Ô∏µ„ÉΩ(`–î¬¥)ÔæâÔ∏µÔªø ‚îª‚îÅ‚îª2016-08-16 00:13:36>M3unflip‚î¨‚îÄ‚îÄ‚î¨Ôªø „Éé( „Çú-„Çú„Éé)2016-08-16 00:13:14EU3tableflip(‚ïØ¬∞‚ñ°¬∞Ôºâ‚ïØÔ∏µ ‚îª‚îÅ‚îÅ‚îÅ‚îª2016-08-16 00:12:48   #'#3cry(Ha32flip‚îª‚îÅ‚îª Ô∏µ„ÉΩ(`–î¬¥)ÔæâÔ∏µÔªø ‚îª‚îÅ‚îª2016-08-24 18:41:32a./3whyy·Éö(‡≤†Áõä‡≤†·Éö)2016-08-26 14:48:21
+∑  •Øõëﬂ˜àÌ—∆                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                crylennywhyyoppa	garry
+	fight		2flipcry   doubleflip
+unfliptableflipjustright	shrug	lenny         ˚ˆÒÏÁ‚ÿŒ…ƒø›∫µ”∞                                                                                                                                                                       Ç0Ñ/3gslongHow-To Bot: The following guide goes through everything you need to know on how to create a bot, code it, and run it. Before you ask any further question, please read this: 
+<https://eslachance.gitbooks.io/discord-js-bot-guide/content/getting-started/the-long-version.html>2016-08-16 00:22:02xÅ=3botauthTo add a bot to your server please see: <http://imgur.com/a/W8Mud> and *read carefully*.2016-08-16 00:22:02ÇÉM3alienwareI will certainly get flack for saying it: It's an Alienware. Yes I have perfectly good and valid reason for getting a Dell PC, not it's not personal preference, no it does not cost more than a custom built PC I did the math.2016-08-16 00:22:02yÅ=3headdeskhttp://img2.wikia.nocookie.   8   !4   /   	*   &%   %    #   6       .                  
+      ¢Ê87ÁkŸ⁄¬ìéjÔá≠CœÙæ≤Œ‘áS∆∑õ ª}Fx® ®ú	)˙ﬁÌ¯[,,,,                                                                                                                                                                                                                                                                                                     v8v95v8token4	token3jtfc1
+server0nbp/
+konami.blockthem,ask+find*watashi)slowclap(!proficient'selfbot2
+winner%!areyounoob$-somethingchanged##whereisevie"'awaitResponse!	shame logging!codeblocks
+99bugs	godnonohonesty	thick	learn6!voicelinux9voicewinvoiceex-5 v8v98	spoonvoicebotviolets` 
+anykey7#grunt-babelmusicbot∂ 
+noobsdeletemsg!speechlessfp
+confused	permbitsteddybear   gitbookbrackets
+gslongbotauthalienware	headdesk    “ ÖÄ “                                                                                                                                                                                                  Ç1Ñ/3gslongHow-To Bot: The following guide goes through everything you need to know on how to create a bot, code it, and run it. Before you ask any further question, please read this: 
+<https://eslachance.gitbooks.io/discord-js-bot-guide/content/getting-started/the-long-version.html>2016-08-16 00:22:02.xÅ=3botauthTo add a bot to your server please see: <http://imgur.com/a/W8Mud> and *read carefully*.2016-08-16 00:22:02ÇÉM3alienwareI will certainly get flack for saying it: It's an Alienware. Yes I have perfectly good and valid reason for getting a Dell PC, not it's not personal preference, no it does not cost more than a custom built PC I did the math.2016-08-16 00:22:02yÅ=3	headdeskhttp://img2.wikia.nocookie.net/__cb20140818100403/madnesscombat/images/7/73/Headdesk.gif2016-08-16 00:22:02   [ [´                                                                                                                                                                                                                                                          Ö"ä3bracketsThe following trick is a lifesaver, so pay attention: Your code editÖ"ä3bracketsThe following trick is a lifesaver, so pay attention: Your code editor is trying to help you. Whatever editor you're using, clicking on any (and I mean any) separator token such as parentheses, square brackets, curly braces, double and single quotes, will automatically highlight the one that matches it. The screenshot below shows this: I clicked on the curly brace at the bottom, it shows me the one on top by surrounding it with a square. Learn this, and how different functions and event handlers "look" like. Even in long bits of code, this works.
+https://cdn.discordapp.com/attachments/81385020756865024/194265307815215106/unknown.png2016-08-16 00:22:02	   G GG                Ñ(5à!3v8v9OH! Looks like you updated to the latest version of Discord.js **without checking** what was new. Well guess what, **everything is new**. V9 changes everything. 
+- It requires Node v6.x
+- It's been rewritten from the ground up
+- Pretty much all your code will need to be updated.
+
+If you want to just forget all this bad dream and get back to work: 
+
+- run the command `npm install hydrabolt/discord.js#indev-rewrite`
+- Restart your bot.
+- Now you can take the time to update your bot slowly to v9 eventually. And breathe.2016-09-09 19:51:31É66Ü=3	learn**Useful links for learning JavaScript and Node**:
+codeCademy online course: <https://www.codecademy.com/learn/javascript>
+Eloquent Javascript, free book: <http://eloquentjavascript.net/>
+Some Node: <http://nodeschool.io/> and <https://www.codeschool.com/courses/real-time-web-with-node-js>
+Javascript Reference/Docs: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference> (do NOT use W3School!)2016-09-09 20:54:42    S ·àD œ S                                                                 z!Å;3speechlesshttps://cdn.discordapp.com/attachments/81385020756865024/197095330783690755/unknown.png2016-08-16 00:22:02s
+Å=3fphttps://cdn.discordapp.com/attachments/189542410622205952/197087798073884674/iWKad22.png2016-08-16 00:22:02B	Q3confused‚òùüòÄ ..... üëàüòï ...... ü§î2016-08-16 00:22:02ÇVÑw3permbitsTo create the "permission bits" at the end of a Bot Authorization URL, visit <https://discordapi.com/permissions.html> and check the permissions you want. Use that at the end of the URL:
+`https://discordapp.com/oauth2/authorize?client_id=**application_id_here**&scope=bot&permissions=**permission_bits_here**`2016-08-16 00:22:02äìq3teddybearSo there's this concept called **The Teddy Bear Technique**. The story goes like this. A new manager in charge of a group of developers found that very often, one of his programmers would come see him because he code didn't compile. The first question he asked, of    "   ü ü                ÖâS3	noobsWe're glad to help where we can, but come with at least a basic understanding of the programming language you intend to use. It's not exactly fun trying to help someone who does not understand the basics. Please, to maintain everyone's sanity, we ask that you at least have gone through a known JavaScript course such as <https://www.codecademy.com/learn/javascript> and perhaps on node.js like <http://www.nodebeginner.org/>. If you don't understand the code samples we show you and you read on the internet, then you will most likely not be able to code your own bot. We're not going to do it for you, period.2016-08-16 00:22:02Ç^Ö3deletemsgRead, assimilate, understand: 
+```js
+bot.on("message", msg => {
+    bot.sendMessage(msg.channel, "THIS IS THE 1. MESSAGE THAT GETS DELETED, IT'S THE BOTS MESSAGE", (err, message) => {
+        bot.deleteMessage(message);
+    }) ;
+
+    //delete the message that triggered the command
+    bot.deleteMessage(msg);
+})
+```2016-08-16 00:22:02!  ≥ Ò ì ≥ ≥                    Å
+Å_3violets```
+Rose are Red
+Violet are Blue
+Wait a second...
+Violets are VIOLET
+This poem makes no goddamn sense
+```2016-08-16 00:22:02à!ê3voicebotSo you want to make a music bot and you're on Windows? Tip #1: Don't.
+Making voice work o      rÅ_3	violets```
+Rose are Red
+Violet are Blue
+Wait a second...
+Violets are VIOLET
+This poem makes no goddamn seÅ
+Å_3violets```
+Rose are Red
+Violet are Blue
+Wait a second...
+Violets are VIOLET
+This poem makes no goddamn sense
+```2016-08-16 00:22:02ÅN#Ça3grunt-babelThis is why `grunt-babel` is pure evil and `sindresorhus` is the devil incarnate: 
+https://cdn.discordapp.com/attachments/81385020756865024/198835115164434433/unknown.png2016-08-16 00:22:02ÇÉc3musicbot```md
+# Making your own Music Bot
+
+So, you want to know how to make a music bot? Don't. There's about 20 out there, they all work fine, and you'll spend weeks trying to figure out why node-opus won't compile. Please, just... don't.
+```2016-08-16 00:22:02    Œ  Œ N    ;1I3jtfcJesus. Titty. Fucking. Christ.2016-09-08 02:14:30~0ÅI3server**The new Official Discord.js Server is live!** Join us right here: https://discord.gg/bRCvFy92016-09-06 20:38:58Ü//å33nbp**Node.js Best Practices**
+1. Never omit semicolons, even though it's often valid.
+2. Indent consistently. This makes your code much more readable, which aids debugging.
+3. Don't make variables global unless you need to. Declare variables in the smallest scope possible.
+3.5 If you do need a global variable, and it needs to stay the same (defining number of ms in hour, for example), make it a const so it can't be edited.
+4. Use `===` and `!==` instead of `==` and `!=`. The former compares content and type. `2 == '2'` returns true, while `2 === '2'` returns false.
+5. Don't repeat the same code 20 times. Make a function for it instead.
+6. If you have cpu-intensive code, try to shift that to a child process. Node.js is still single-threaded, so you don't want to block that thread.2016-09-02 15:27:31   U U©                                                                                                                                                                                                                                                                                                                                                                                                                             Å)Ç3	privacy**To prevent any more spam, right-click on the server in the list, select Privacy Settings, and uncheck the only option in this window.**2016-08-16 00:22:02É(Ü!3spoonThere is no spoon, and there is no spoon-feeding. Challenges are what makes life interesting, and we'd rather give you tips and resources than code for you. So, if you think you're entitled to getting code that fixes all your issues without having to think about it, you had better also realized we're entitled to refuse to spoon-feed you. Show at least some initiative and at least ask nicely.2016-08-16 00:22:02    !                                                                                                                                                                                                                                                                                            ãnó%3voicewinIf you are having issues while installing discord.js with voice support, please follow these instructions.
+*If you don't want voice, simply use `npm install --save  --no-optional discord.js`!*
+
+- **Python 2ãnó%3voicewinIf you are having issues while installing discord.js with voice support, please follow these instructions.
+*If you don't want voice, simply use `npm install --save  --no-optional discord.js`!*
+
+- **Python 2.7.x** should be installed, and available in path. To verify, click *start*, *run*, type `python` and it should open it). If not, download from  <https://python.org/downloads/>.
+- **FFMPEG** must be installed properly, instructions are on <http://adaptivesamples.com/how-to-inst       5 í 5$€                                     Ö#,ä3blockthemüéâ jagrosh's super simple guide for How to deal with people that bother you üéä 
+
+1‚É£ Block the user. It's simple. It's easy. It's free! It's a couple clicks/taps, and you never have to see their messages again.
+2‚É£ Ban them from any servers on which you have the permission to do so.
+3‚É£ Ask moderators on other servers to ban them, and present your case.
+4‚É£ If there are servers that you share, and the moderators won't ban them (or the moderators are the issue), leave the server.
+
+Final Note: Unless the user is doing something illegal, there is no point in bringing the issue up to Hammer & Chisel Staff (Discord Employees) ‚ú®2016-08-27 04:49:51G._3konami‚¨Ü ‚¨Ü ‚¨á ‚¨á ‚¨Ö ‚û° ‚¨Ö ‚û° üÖ± üÖ∞2016-08-31 16:45:36ái-è3voiceex*This code will join a channel on command and play a single MP3 file.*
+```js
+if(msg.conten   l+Å-3askIf you want to ask a question ask a question don't ask if you can ask a question2016-08-25 17:51:57@  $ " Â $°¢                  Å>2ÇG3selfbotSo, you wanna make a selfbot? I gotchu covered, fam. Read up!
+<https://eslachance.gitbooks.io/discord-js-bot-guide/content/samples/selfbots_are_awesome.html>2016-09-08 17:50:06;1I3jtfcJesus. Titty. Fucking. Christ.2016-09-08 02:14:30~0ÅI3server**The new Official Discord.js Server is live!** Join us right here: https://discord.gg/bRCvFy92016-09-06 20:38:58Å|4ÉC3v8token**V8 bots can still work if you prefix the token with the string `Bot `. This has been confirmed.**
+Just do `bot.loginWithToken("Bot yournormaltoken");` to login correctly for bot accounts. **selfbots don't need this**.2016-09-09 02:16:36Å3Ç	3	token**NOTE** IT IS CURRENTLY A KNOWN ISSUE THAT SOME TOKENS ARE NOT WORKING EVEN AFTER GENERATING A NEW ONE. WE'RE LOOKING INTO IT2016-09-08 22:21:54   ¿ÇG3	selfbotSo, you wanna make a selfbot? I gotchu covered, fam. Read up!
+<https://eslachance.gitbooks.io/discord-js-bot-guide/content/samples/selfbots_are_awesome.html>2016-09-08 17:50:06    course, was "Ok step through the code and let's see what's going on". And as his employee was reading through an explaining his code, more often than not he would get a flash of insight, run out of the manager's office and go back to fix the problem that he had seen in his code, successfully.
+
+Seeing as though this happened way too often, the manager did something different: He placed 2 chairs outside of his office. One was left empty and on the other he sat a large teddy bear that once belonged to his daughter. And then in a meeting he told all his developers: "Before you come to see me with a code problem, I want you to sit down next to the teddy bear, and explain your problem and your code to him. **IF** you still have the issue afterwards, come see me."
+
+While reluctant at first, his devs did as they were asked. And after a month, it came to light that 5-10 hours a week of the manager's time were now freed up for more important tasks, and the teddy bear became the devs' best friend.2016-08-16 00:22:02   2 â«r42yãA3links
+**Useful links for learning JavaScript and Node**:
+codeCademy online course: <https://www.codecademy.com/learn/javascript>
+Eloquent Javascript, free book: <http://eloquentjavascript.net/>
+Some Node: <http://nodeschool.io/> and <https://www.codeschool.com/courses/real-timeÅ!ÉC3codeblocks**Please, if you paste your code here, use code blocks!**
+It makes for a much easier read for everyone. To create codeblocks, simply use : 
+\`\`\`js
+var code = "blocks";
+\`\`\`
+**Result:**
+```js
+var code = "blocks";
+```2016-08-16 00:22:02<I399bugshttp://i.imgur.com/HTisMpC.jpg2016-08-16 00:22:02Sy3godnohttps://media.giphy.com/media/12XMGIWtrHBl5e/giphy.gif2016-08-16 00:22:02Fe3nohttp://www.kimyakariyerim.com/uploads/no.jpg2016-08-16 00:22:02xÅ=3honestyhttps://cdn.discordapp.com/attachments/185776869398806529/208353697770504192/oXmfEEb.png2016-08-16 00:22:02uÅ;3thickhttps://cdn.discordapp.com/attachments/81385020756865024/208251349102493698/G589Z4X.png2016-08-16 00:22:02    all-ffmpeg-on-windows/>
+- If you have Visual Studio 2013 or 2015, make sure **C++ Build Tools** are installed. Simply create a new Empty C++ project. If prompted to install the C++ files, do so. 
+- **Alternatively**, you can install only the Visual C++ Build Tools as a standalone: <http://landinghub.visualstudio.com/visual-cpp-build-tools>
+- Some users have reported that installing VLC helps with codec dependencies, so try that. 
+
+Run the following commands to re-install discord.js
+
+`npm cache clean` (to remove any cached versions of discord or its dependencies)
+`npm install -g npm` (this will update NPM, and fixed it for some users!)
+`npm install --save --msvs_version=2015 discord.js` (change version to 2013 if using VS2013)
+
+If any errors show, attempt to re-install node-opus manually: 
+
+`npm cache clean`
+`npm install node-opus`
+
+**IF THIS DOESN'T WORK, USE LINUX. Don't care if it's a VM, a VPS, an old laptop, a toaster or a damn shoebox. If the above won't work you're out of luck!**2016-08-16 00:22:02    µ  µ                                                                                                                                                                         e Å3shameSHAME üîî üîî üîî ... SHAME üîî üîî üîî ... SHAME üîî üîî üîî2016-08-16 00:22:02Öaã3	logging**This is a logging function Have fun!**
+```js
+// requires `npm install touch`
+const fs = require('fs');
+const touch = require("touch");
+bot.on('message', msg => {
+  // This section logs all chat to text files. 
+  let server, filename, logtext;
+  if(msg.channel.isPrivate) {
+    server = 'pm';
+    filename =  msg.author.username;
+    logtext = `${msg.author.name}:  ${msg.cleanContent}\n`;
+  } else {
+    server = msg.server;
+    filename =  msg.channel.name;
+    logtext = `#${msg.channel.name} ; ${msg.author.name}:  ${msg.cleanContent}\n`;
+  }
+  fs.mkdir("./logs/"+server, (e) => {});
+  let logFile = `./logs/${server}/${filename}.txt`;
+  touch(logFile);
+  fs.appendFileSync(logFile, logtext);
+});
+```2016-08-16 00:22:02     Öç p          S%u3winnerüö® üö® üö® ***WE HAVE A WINNER*** üö® üö® üö®2016-08-17 23:47:31Ç$!É{3areyounoobAhhh, a new user has entered this channel, seeking help. 
+Now the question is... will you turn out to be an interesting character that can do cool programming?
+*Or* just another noob we have to spoonfeed?
+The choice... is **yours**. Choose wisely.2016-08-17 20:01:24w#-Å)3somethingchangedIf something stops working, and nothing has changed, **something has changed**2016-08-16 18:13:02}"#Å=3whereiseviehttps://cdn.discordapp.com/attachments/214866271639044097/214921769335652352/unknown.png2016-08-16 17:36:13Çx!'Ö13awaitResponse**awaitResponse Example:**
+```js
+if(msg.content === "quiz") {
+    bot.awaitResponse(msg, "What color is the sky?")
+    .then(nextMessage => {
+        if(nextMessage.content.toLowerCase() === "blue") {
+            bot.sendMessage(msg, "Correct :tada:");
+        } else {
+            bot.sendMessage(msg, "Wrong!!");
+        }
+    });
+}
+```2016-08-16 00:22:02
